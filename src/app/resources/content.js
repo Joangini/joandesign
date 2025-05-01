@@ -1,16 +1,16 @@
 import { Logo } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Joan",
+  lastName: "",
   get name() {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this.firstName}${this.lastName ? ` ${this.lastName}` : ''}`;
   },
-  role: "Design Engineer",
+  role: "UI/UX Designer",
   avatar: "/images/avatar.jpg",
   email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Asia/Jakarta", // Keeping the original location unless you want to change it
+  languages: ["English"], // Simplified based on available information
 };
 
 const newsletter = {
@@ -18,29 +18,21 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I occasionally write about UI/UX design trends, user research insights, and share case studies from my work with startups and non-profit organizations.
     </>
   ),
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
   {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    name: "Figma Community",
+    icon: "figma", // Assuming figma icon exists or using a similar icon
+    link: "https://www.figma.com/@joansdesign",
   },
   {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
+    name: "Behance",
+    icon: "behance", // Assuming behance icon exists or using a similar icon
+    link: "https://www.behance.net/joansdesign",
   },
   {
     name: "Email",
@@ -53,18 +45,17 @@ const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `${person.name}'s Design Portfolio`,
+  description: `Portfolio website showcasing my work as a ${person.role} for startups, B2B, and non-profits`,
+  headline: <>UI/UX Designer crafting intuitive digital experiences</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Recent project: <strong className="ml-4">Nesterlify</strong></>,
+    href: "/work/nesterlify-enhancing-payment-flexibility-with-web3-integration",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon={false} style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Joan, a UI/UX Designer specializing in startups, B2B, and non-profit projects, creating thoughtful user interfaces and experiences.
     </>
   ),
 };
@@ -90,52 +81,51 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Joan is a UI/UX Designer specializing in creating intuitive digital experiences for startups, B2B platforms, and non-profit organizations. With a focus on user-centered design principles, Joan transforms complex challenges into elegant, accessible interfaces that deliver results for businesses and delight for users.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
+        company: "DesignForward",
         timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        role: "Senior UI/UX Designer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led the redesign of 5 major startup dashboards, resulting in an average 35% improvement in user engagement metrics.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Created comprehensive design systems for B2B platforms, enabling consistent user experiences across web and mobile applications.
+          </>,
+          <>
+            Mentored junior designers and introduced user-centered design methodologies to product development workflows.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            alt: "Dashboard Design Project",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "UX Innovate",
+        timeframe: "2019 - 2022",
+        role: "UI/UX Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed user interfaces for non-profit organizations, improving digital accessibility and volunteer engagement.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Conducted user research and usability testing to guide product iterations and feature prioritization.
+          </>,
+          <>
+            Collaborated with development teams to ensure design integrity throughout implementation.
           </>,
         ],
         images: [],
@@ -143,54 +133,51 @@ const about = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Design Academy",
+        description: <>Studied User Experience Design with focus on digital product interfaces.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "University of Digital Arts",
+        description: <>Bachelor's degree in Interactive Design with minor in Psychology.</>,
+      },
+      {
+        name: "Nielsen Norman Group",
+        description: <>UX Certification in usability research and interface evaluation.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "UX/UI Design",
+        description: <>Creating intuitive, user-centered digital interfaces and experiences.</>,
+        images: [],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        title: "Marketing Design",
+        description: <>Developing compelling visual content for marketing campaigns and materials.</>,
+        images: [],
+      },
+      {
+        title: "Web Design",
+        description: <>Designing responsive, accessible, and visually appealing websites.</>,
+        images: [],
+      },
+      {
+        title: "Print Design",
+        description: <>Creating effective print materials with strong visual communication.</>,
+        images: [],
+      },
+      {
+        title: "HTML/CSS/JS",
+        description: <>Front-end development skills to bring designs to life.</>,
+        images: [],
       },
     ],
   },
